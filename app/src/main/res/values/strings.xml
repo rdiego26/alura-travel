@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Alura Travel</string>
+    <string name="packageListSpecialsHeader">Especiais</string>
 </resources>
