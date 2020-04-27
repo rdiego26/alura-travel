@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/packageItemImage"
@@ -13,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:src="@drawable/sao_paulo_sp"
+        tools:src="@sample/packages.json/pacotes/imagem"
         android:scaleType="centerCrop"
         />
 
@@ -21,7 +22,7 @@
         android:id="@+id/textImagePackageItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="São Paulo"
+        tools:text="@sample/packages.json/pacotes/local"
         app:layout_constraintStart_toStartOf="@id/packageItemImage"
         app:layout_constraintEnd_toEndOf="@id/packageItemImage"
         app:layout_constraintTop_toTopOf="@id/packageItemImage"
@@ -50,7 +51,7 @@
         android:id="@+id/packageItemDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2 dias"
+        tools:text="@sample/packages.json/pacotes/dias"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/packageItemDivider"
@@ -61,10 +62,10 @@
         />
 
     <TextView
-        android:id="@+id/packageItemValue"
+        android:id="@+id/packageItemPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$ 243,99"
+        tools:text="@sample/packages.json/pacotes/preco"
         app:layout_constraintTop_toBottomOf="@id/packageItemDays"
         app:layout_constraintStart_toStartOf="@id/packageItemDays"
         android:textSize="20sp"
