@@ -5,70 +5,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/packageItemImage"
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@sample/packages.json/pacotes/imagem"
-        android:scaleType="centerCrop"
-        />
-
-    <TextView
-        android:id="@+id/textImagePackageItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="@sample/packages.json/pacotes/local"
-        app:layout_constraintStart_toStartOf="@id/packageItemImage"
-        app:layout_constraintEnd_toEndOf="@id/packageItemImage"
-        app:layout_constraintTop_toTopOf="@id/packageItemImage"
-        app:layout_constraintBottom_toBottomOf="@id/packageItemImage"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:textSize="14sp"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:background="@android:drawable/screen_background_dark_transparent"
-        />
-    
-    <View
-        android:id="@+id/packageItemDivider"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:background="@android:color/holo_orange_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/packageItemImage"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/packageItemDays"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="@sample/packages.json/pacotes/dias"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/packageItemDivider"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_margin="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/packageItemPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="@sample/packages.json/pacotes/preco"
-        app:layout_constraintTop_toBottomOf="@id/packageItemDays"
-        app:layout_constraintStart_toStartOf="@id/packageItemDays"
-        android:textSize="20sp"
-        android:textColor="@android:color/holo_green_dark"
-        />
+            <ImageView
+                android:id="@+id/packageItemImage"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                tools:src="@sample/packages.json/pacotes/imagem" />
+
+            <TextView
+                android:id="@+id/textImagePackageItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/screen_background_dark_transparent"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:text="@sample/packages.json/pacotes/local" />
+
+            <View
+                android:id="@+id/packageItemDivider"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@android:color/holo_orange_dark" />
+
+            <TextView
+                android:id="@+id/packageItemDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:text="@sample/packages.json/pacotes/dias" />
+
+            <TextView
+                android:id="@+id/packageItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="20sp"
+                tools:text="@sample/packages.json/pacotes/preco" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
