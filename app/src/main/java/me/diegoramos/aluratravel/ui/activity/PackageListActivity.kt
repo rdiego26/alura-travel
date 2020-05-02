@@ -1,8 +1,8 @@
 package me.diegoramos.aluratravel.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.dao.PackageDAO
 import me.diegoramos.aluratravel.ui.adapter.PackageListAdapter
@@ -14,6 +14,7 @@ class PackageListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_package_list)
 
         configureList()
+
     }
 
     private fun configureList() {

@@ -3,4 +3,5 @@
     <string name="package_list_specials_header">Especiais</string>
     <string name="package_list_banner_description">Banner inicial dos pacotes</string>
     <string name="package_item_days">%1$d dia(s)</string>
+    <string name="package_summary_image_description">Imagem da cidade do pacote</string>
 </resources>
