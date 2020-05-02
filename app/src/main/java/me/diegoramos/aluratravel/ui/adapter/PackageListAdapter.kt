@@ -31,10 +31,7 @@ class PackageListAdapter(private val context: Context,
 
     private fun configurePrice(view: View, item: Package) {
         val priceText: TextView = view.findViewById(R.id.packageItemPrice)
-        priceText.text = String.format(
-            context.resources.getString(R.string.package_item_price),
-            CurrencyUtil.formatToBR(item.price)
-        )
+        priceText.text = CurrencyUtil.formatToBR(item.price)
     }
 
     private fun configureDays(view: View, item: Package) {
