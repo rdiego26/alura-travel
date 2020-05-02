@@ -24,26 +24,41 @@ class PackageSummaryActivity : AppCompatActivity() {
 
         val item = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
 
-        val locationText: TextView = findViewById(R.id.package_summary_city)
-        locationText.text = item.location
+        configLocation(item)
+        configImage(item)
+        configDays(item)
+        configPrice(item)
+        configDates(item)
 
-        val image: ImageView = findViewById(R.id.package_summary_image)
-        val drawable: Drawable? = DrawableUtil.getDrawable(this, item.image)
-        image.setImageDrawable(drawable!!)
+    }
 
-        val daysText: TextView = findViewById(R.id.package_summary_days)
-        daysText.text = DaysUtil.formatToText(item.days, this)
-
-        val priceText: TextView = findViewById(R.id.package_summary_price)
-        priceText.text = CurrencyUtil.formatToBR(item.price)
-
+    private fun configDates(item: Package) {
         val datesText: TextView = findViewById(R.id.package_summary_dates)
         val initialDate = Calendar.getInstance()
         val finalDate = Calendar.getInstance()
         finalDate.add(Calendar.DATE, item.days)
         datesText.text = DateUtil.formatRange(initialDate.time, finalDate.time, this)
+    }
 
+    private fun configPrice(item: Package) {
+        val priceText: TextView = findViewById(R.id.package_summary_price)
+        priceText.text = CurrencyUtil.formatToBR(item.price)
+    }
 
+    private fun configDays(item: Package) {
+        val daysText: TextView = findViewById(R.id.package_summary_days)
+        daysText.text = DaysUtil.formatToText(item.days, this)
+    }
+
+    private fun configImage(item: Package) {
+        val image: ImageView = findViewById(R.id.package_summary_image)
+        val drawable: Drawable? = DrawableUtil.getDrawable(this, item.image)
+        image.setImageDrawable(drawable!!)
+    }
+
+    private fun configLocation(item: Package) {
+        val locationText: TextView = findViewById(R.id.package_summary_city)
+        locationText.text = item.location
     }
 
 }
