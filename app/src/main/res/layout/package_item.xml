@@ -32,7 +32,7 @@
                 tools:src="@sample/packages.json/pacotes/imagem" />
 
             <TextView
-                android:id="@+id/textImagePackageItem"
+                android:id="@+id/packageItemLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
