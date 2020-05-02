@@ -3,6 +3,8 @@
     <string name="app_name">Porfírio Travel</string>
     <string name="package_list_specials_header">Specials</string>
     <string name="package_list_banner_description">Initial banner of packages</string>
-    <string name="package_item_days">%1$d day(s)</string>
     <string name="package_summary_image_description">City image of package</string>
+
+    <string name="common_day_plural">days</string>
+    <string name="common_day_regular">day</string>
 </resources>

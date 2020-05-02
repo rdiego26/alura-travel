@@ -1,5 +1,6 @@
 package me.diegoramos.aluratravel.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +15,7 @@ class PackageListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_package_list)
 
         configureList()
-
+        startActivity(Intent(this, PackageSummaryActivity::class.java))
     }
 
     private fun configureList() {
