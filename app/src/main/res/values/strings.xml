@@ -4,7 +4,8 @@
     <string name="package_list_banner_description">Banner inicial dos pacotes</string>
     <string name="package_summary_image_description">Imagem da cidade do pacote</string>
     <string name="package_summary_price_label">Preço final</string>
-    <string name="package_summary_make_payment_button">Make payment</string>
+    <string name="package_summary_make_payment_button">Realizar Pagamento</string>
+    <string name="package_summary_dates_range">%1$s - %2$s</string>
 
     <string name="common_day_plural">dias</string>
     <string name="common_day_regular">dia</string>

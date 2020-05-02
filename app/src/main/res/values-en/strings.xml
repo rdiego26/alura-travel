@@ -5,7 +5,8 @@
     <string name="package_list_banner_description">Initial banner of packages</string>
     <string name="package_summary_image_description">City image of package</string>
     <string name="package_summary_price_label">Final price</string>
-    <string name="package_summary_make_payment_button">Realizar Pagamento</string>
+    <string name="package_summary_make_payment_button">Make Payment</string>
+    <string name="package_summary_dates_range">%1$s - %2$s</string>
 
     <string name="common_day_plural">days</string>
     <string name="common_day_regular">day</string>

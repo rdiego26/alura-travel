@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
 import me.diegoramos.aluratravel.util.CurrencyUtil
+import me.diegoramos.aluratravel.util.DateUtil
 import me.diegoramos.aluratravel.util.DaysUtil
 import me.diegoramos.aluratravel.util.DrawableUtil
 import java.math.BigDecimal
+import java.util.*
 
 class PackageSummaryActivity : AppCompatActivity() {
 
@@ -18,7 +20,7 @@ class PackageSummaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.package_summary)
 
-        val item: Package = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
+        val item = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
 
         val locationText: TextView = findViewById(R.id.package_summary_city)
         locationText.text = item.location
@@ -32,6 +34,13 @@ class PackageSummaryActivity : AppCompatActivity() {
 
         val priceText: TextView = findViewById(R.id.package_summary_price)
         priceText.text = CurrencyUtil.formatToBR(item.price)
+
+        val datesText: TextView = findViewById(R.id.package_summary_dates)
+        val initialDate = Calendar.getInstance()
+        val finalDate = Calendar.getInstance()
+        finalDate.add(Calendar.DATE, item.days)
+        datesText.text = DateUtil.formatRange(initialDate.time, finalDate.time, this)
+
 
     }
 
