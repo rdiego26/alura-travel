@@ -10,6 +10,7 @@ import android.widget.TextView
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
 import me.diegoramos.aluratravel.util.CurrencyUtil
+import me.diegoramos.aluratravel.util.DaysUtil
 import me.diegoramos.aluratravel.util.DrawableUtil
 
 class PackageListAdapter(private val context: Context,
@@ -35,8 +36,7 @@ class PackageListAdapter(private val context: Context,
 
     private fun configureDays(view: View, item: Package) {
         val daysText: TextView = view.findViewById(R.id.packageItemDays)
-        daysText.text =
-            String.format(context.resources.getString(R.string.package_item_days), item.days)
+        daysText.text = DaysUtil.formatToText(item.days, context)
     }
 
     private fun configureImage(
