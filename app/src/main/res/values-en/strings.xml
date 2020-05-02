@@ -3,6 +3,7 @@
     <string name="app_name">Porfírio Travel</string>
     <string name="package_list_specials_header">Specials</string>
     <string name="package_list_banner_description">Initial banner of packages</string>
+    <string name="package_summary_app_bar_title">Package summary</string>
     <string name="package_summary_image_description">City image of package</string>
     <string name="package_summary_price_label">Final price</string>
     <string name="package_summary_make_payment_button">Make Payment</string>

@@ -20,6 +20,8 @@ class PackageSummaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.package_summary)
 
+        setTitle(R.string.package_summary_app_bar_title)
+
         val item = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
 
         val locationText: TextView = findViewById(R.id.package_summary_city)
