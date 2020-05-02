@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Porfírio Travel</string>
-    <string name="packageListSpecialsHeader">Especiais</string>
-    <string name="packageItemDays">%1$d dia(s)</string>
-    <string name="packageItemPrice">R$ %1$s</string>
+    <string name="package_list_specials_header">Especiais</string>
+    <string name="package_list_banner_description">Banner inicial dos pacotes</string>
+    <string name="package_item_days">%1$d dia(s)</string>
+    <string name="package_item_price">R$ %1$s</string>
 </resources>

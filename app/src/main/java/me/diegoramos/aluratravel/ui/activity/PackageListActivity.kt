@@ -13,6 +13,10 @@ class PackageListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_package_list)
 
+        configureList()
+    }
+
+    private fun configureList() {
         val packageList: ListView = findViewById(R.id.packageList)
         packageList.adapter = PackageListAdapter(this, PackageDAO.getList())
     }

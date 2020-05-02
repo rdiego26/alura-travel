@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Porfírio Travel</string>
-    <string name="packageListSpecialsHeader">Specials</string>
-    <string name="packageItemDays">%1$d day(s)</string>
-    <string name="packageItemPrice">R$ %1$s</string>
+    <string name="package_list_specials_header">Specials</string>
+    <string name="package_list_banner_description">Initial banner of packages</string>
+    <string name="package_item_days">%1$d day(s)</string>
+    <string name="package_item_price">R$ %1$s</string>
 </resources>
