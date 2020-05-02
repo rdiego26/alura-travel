@@ -1,8 +1,6 @@
 package me.diegoramos.aluratravel.ui.adapter
 
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +10,7 @@ import android.widget.TextView
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
 import me.diegoramos.aluratravel.util.CurrencyUtil
+import me.diegoramos.aluratravel.util.DrawableUtil
 
 class PackageListAdapter(private val context: Context,
                          private val data: List<Package>) : BaseAdapter() {
@@ -45,14 +44,8 @@ class PackageListAdapter(private val context: Context,
         item: Package
     ) {
         val imageView: ImageView = view.findViewById(R.id.packageItemImage)
-        val imageDrawable = getDrawable(item)
+        val imageDrawable = DrawableUtil.getDrawable(context, item.image)
         imageView.setImageDrawable(imageDrawable)
-    }
-
-    private fun getDrawable(item: Package): Drawable? {
-        val resources: Resources = context.resources
-        val drawableID = resources.getIdentifier(item.image, "drawable", context.packageName)
-        return resources.getDrawable(drawableID)
     }
 
     private fun configureLocation(
