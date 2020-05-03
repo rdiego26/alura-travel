@@ -43,24 +43,26 @@
 
     <TextView
         android:id="@+id/package_summary_dates"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="14sp"
-        tools:text="08/12 - 10/12 de 2020"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/package_summary_days"
-        app:layout_constraintTop_toBottomOf="@+id/package_summary_days" />
+        app:layout_constraintTop_toBottomOf="@+id/package_summary_days"
+        tools:text="08/12 - 10/12 de 2020" />
 
     <TextView
         android:id="@+id/package_summary_price"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/package_summary_dates"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        tools:text="R$ 243,99"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="20sp" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        tools:text="R$ 243,99" />
 
     <TextView
         android:id="@+id/package_summary_price_label"
