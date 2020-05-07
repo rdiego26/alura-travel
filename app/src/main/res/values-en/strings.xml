@@ -11,4 +11,6 @@
 
     <string name="common_day_plural">days</string>
     <string name="common_day_regular">day</string>
+    <string name="paymentTitle">Enter the credit card information you want to use for payment</string>
+    <string name="priceValueLabel">TextView</string>
 </resources>

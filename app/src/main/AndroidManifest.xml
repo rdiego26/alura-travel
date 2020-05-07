@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.PackageSummaryActivity" />
+        <activity android:name=".ui.activity.PaymentActivity" />
     </application>
 
 </manifest>

@@ -10,4 +10,6 @@
 
     <string name="common_day_plural">dias</string>
     <string name="common_day_regular">dia</string>
+    <string name="paymentTitle">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="priceValueLabel">Purchase amount:</string>
 </resources>
