@@ -1,16 +1,18 @@
 package me.diegoramos.aluratravel.ui.activity
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
+import me.diegoramos.aluratravel.util.Constants
 import me.diegoramos.aluratravel.util.CurrencyUtil
 import me.diegoramos.aluratravel.util.DaysUtil
 import me.diegoramos.aluratravel.util.DrawableUtil
-import java.math.BigDecimal
 
 class PurchaseSummaryActivity : AppCompatActivity() {
 
@@ -20,13 +22,25 @@ class PurchaseSummaryActivity : AppCompatActivity() {
 
         setTitle(R.string.purchase_summary_app_bar_title)
 
-        val item = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
+        handleIntent()
+    }
 
-        configLocation(item)
-        configDays(item)
-        configImage(item)
-        configPrice(item)
+    private fun handleIntent() {
+        val receivedIntent = intent
+        if (receivedIntent.hasExtra(Constants.selectedPackageExtra())) {
+            val item: Package =
+                intent.getSerializableExtra(Constants.selectedPackageExtra()) as Package
 
+            configLocation(item)
+            configDays(item)
+            configImage(item)
+            configPrice(item)
+        } else {
+            val intent = Intent(applicationContext, PackageListActivity::class.java)
+            Toast.makeText(applicationContext, R.string.unavailable_package, Toast.LENGTH_SHORT)
+                .show()
+            startActivity(intent)
+        }
     }
 
     private fun configLocation(item: Package) {

@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/paymentTitleTextView"
+        android:id="@+id/payment_title_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -21,85 +21,90 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/paymentPriceValueLabel"
+        android:id="@+id/payment_price_value_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="@string/price_value_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paymentTitleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/payment_title_text_view" />
 
     <TextView
-        android:id="@+id/paymentPriceValue"
+        android:id="@+id/payment_price_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         tools:text="R$ 421,90"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/paymentPriceValueLabel"
-        app:layout_constraintTop_toBottomOf="@+id/paymentPriceValueLabel" />
+        app:layout_constraintStart_toStartOf="@+id/payment_price_value_label"
+        app:layout_constraintTop_toBottomOf="@+id/payment_price_value_label" />
 
     <EditText
-        android:id="@+id/creditCardNumber"
+        android:id="@+id/credit_card_number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/credit_card_number_hint"
+        android:autofillHints="@string/credit_card_number_hint"
         android:inputType="number"
         android:maxLength="12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paymentPriceValue" />
+        app:layout_constraintTop_toBottomOf="@+id/payment_price_value" />
 
     <EditText
-        android:id="@+id/creditCardMonthExpires"
+        android:id="@+id/credit_card_month_expires"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:hint="@string/credit_card_month_expires_hint"
+        android:autofillHints="@string/credit_card_month_expires_hint"
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/creditCardCVC"
-        app:layout_constraintStart_toStartOf="@+id/creditCardNumber" />
+        app:layout_constraintBottom_toBottomOf="@+id/credit_card_cvc"
+        app:layout_constraintStart_toStartOf="@+id/credit_card_number" />
 
     <EditText
-        android:id="@+id/creditCardYearExpires"
+        android:id="@+id/credit_card_year_expires"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:hint="@string/credit_card_year_expires_hint"
+        android:autofillHints="@string/credit_card_year_expires_hint"
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/creditCardCVC"
-        app:layout_constraintStart_toEndOf="@+id/creditCardMonthExpires" />
+        app:layout_constraintBottom_toBottomOf="@+id/credit_card_cvc"
+        app:layout_constraintStart_toEndOf="@+id/credit_card_month_expires" />
 
     <EditText
-        android:id="@+id/creditCardCVC"
+        android:id="@+id/credit_card_cvc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/credit_card_cvc_hint"
+        android:autofillHints="@string/credit_card_cvc_hint"
         android:inputType="number"
         android:maxLength="3"
         android:textAlignment="center"
         android:drawableStart="@drawable/ic_cvc_cartao_de_credito"
-        app:layout_constraintEnd_toEndOf="@+id/creditCardNumber"
-        app:layout_constraintTop_toBottomOf="@+id/creditCardNumber" />
+        app:layout_constraintEnd_toEndOf="@+id/credit_card_number"
+        app:layout_constraintTop_toBottomOf="@+id/credit_card_number" />
 
     <EditText
-        android:id="@+id/creditCardHolderName"
+        android:id="@+id/credit_card_holder_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/credit_card_holder_name_hint"
+        android:autofillHints="@string/credit_card_holder_name_hint"
         android:digits="@string/credit_card_holder_name_mask"
         android:inputType="textCapCharacters"
-        app:layout_constraintEnd_toEndOf="@+id/creditCardCVC"
-        app:layout_constraintStart_toStartOf="@+id/creditCardMonthExpires"
-        app:layout_constraintTop_toBottomOf="@+id/creditCardCVC" />
+        app:layout_constraintEnd_toEndOf="@+id/credit_card_cvc"
+        app:layout_constraintStart_toStartOf="@+id/credit_card_month_expires"
+        app:layout_constraintTop_toBottomOf="@+id/credit_card_cvc" />
 
     <Button
         android:id="@+id/payment_make_payment_button"
@@ -109,9 +114,9 @@
         android:text="@string/payment_make_payment_button"
         android:textColor="@android:color/white"
         android:background="@drawable/orange_rounded_button"
-        app:layout_constraintEnd_toEndOf="@id/creditCardHolderName"
-        app:layout_constraintStart_toStartOf="@id/creditCardHolderName"
-        app:layout_constraintTop_toBottomOf="@id/creditCardHolderName" />
+        app:layout_constraintEnd_toEndOf="@id/credit_card_holder_name"
+        app:layout_constraintStart_toStartOf="@id/credit_card_holder_name"
+        app:layout_constraintTop_toBottomOf="@id/credit_card_holder_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

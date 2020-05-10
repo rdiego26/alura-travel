@@ -7,19 +7,34 @@ import androidx.appcompat.app.AppCompatActivity
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.dao.PackageDAO
 import me.diegoramos.aluratravel.ui.adapter.PackageListAdapter
+import me.diegoramos.aluratravel.util.Constants
 
 class PackageListActivity : AppCompatActivity() {
+
+    private var packageListView: ListView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_package_list)
 
+        initializeComponents()
         configureList()
-        startActivity(Intent(this, PackageSummaryActivity::class.java))
+    }
+
+    private fun initializeComponents() {
+        packageListView = findViewById(R.id.packageList)
     }
 
     private fun configureList() {
-        val packageList: ListView = findViewById(R.id.packageList)
-        packageList.adapter = PackageListAdapter(this, PackageDAO.getList())
+        packageListView?.adapter = PackageListAdapter(this, PackageDAO.getList())
+        packageListView?.setOnItemClickListener { parent, view, position, id ->
+            toToPackageSummary(position)
+        }
+    }
+
+    private fun toToPackageSummary(position: Int) {
+        val intent = Intent(applicationContext, PackageSummaryActivity::class.java)
+        intent.putExtra(Constants.selectedPackageExtra(), PackageDAO.getList().get(position))
+        startActivity(intent)
     }
 }

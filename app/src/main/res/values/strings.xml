@@ -26,4 +26,5 @@
     <string name="purchase_summary_header_second_line">Compra realizada com sucesso :)</string>
     <string name="purchase_summary_text">Check the purchase summary:</string>
     <string name="purchase_summary_app_bar_title">Resumo da Compra</string>
+    <string name="unavailable_package">Pacote indisponível</string>
 </resources>

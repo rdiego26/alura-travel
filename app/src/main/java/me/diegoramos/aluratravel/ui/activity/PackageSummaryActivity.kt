@@ -1,17 +1,16 @@
 package me.diegoramos.aluratravel.ui.activity
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
-import me.diegoramos.aluratravel.util.CurrencyUtil
-import me.diegoramos.aluratravel.util.DateUtil
-import me.diegoramos.aluratravel.util.DaysUtil
-import me.diegoramos.aluratravel.util.DrawableUtil
-import java.math.BigDecimal
+import me.diegoramos.aluratravel.util.*
 import java.util.*
 
 class PackageSummaryActivity : AppCompatActivity() {
@@ -22,14 +21,27 @@ class PackageSummaryActivity : AppCompatActivity() {
 
         setTitle(R.string.package_summary_app_bar_title)
 
-        val item = Package("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99))
+        handleIntent()
+    }
 
-        configLocation(item)
-        configImage(item)
-        configDays(item)
-        configPrice(item)
-        configDates(item)
+    private fun handleIntent() {
+        val receivedIntent = intent
+        if (receivedIntent.hasExtra(Constants.selectedPackageExtra())) {
+            val item: Package =
+                intent.getSerializableExtra(Constants.selectedPackageExtra()) as Package
 
+            configLocation(item)
+            configImage(item)
+            configDays(item)
+            configPrice(item)
+            configDates(item)
+            configButton(item)
+        } else {
+            val intent = Intent(applicationContext, PackageListActivity::class.java)
+            Toast.makeText(applicationContext, R.string.unavailable_package, Toast.LENGTH_SHORT)
+                .show()
+            startActivity(intent)
+        }
     }
 
     private fun configDates(item: Package) {
@@ -59,6 +71,15 @@ class PackageSummaryActivity : AppCompatActivity() {
     private fun configLocation(item: Package) {
         val locationText: TextView = findViewById(R.id.package_summary_city)
         locationText.text = item.location
+    }
+
+    private fun configButton(item: Package) {
+        val button: Button = findViewById(R.id.package_summary_button)
+        button.setOnClickListener {
+            val intent = Intent(applicationContext, PaymentActivity::class.java)
+            intent.putExtra(Constants.selectedPackageExtra(), item)
+            startActivity(intent)
+        }
     }
 
 }
