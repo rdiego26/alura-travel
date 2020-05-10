@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/purchaseSummaryImageHeader"
+        android:id="@+id/purchase_summary_image_header"
         android:layout_width="0dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,75 +16,75 @@
         app:srcCompat="@android:color/holo_orange_dark" />
 
     <TextView
-        android:id="@+id/purchaseSummaryFirstHeaderText"
+        android:id="@+id/purchase_summary_first_header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/purchase_summary_header_first_line"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/purchaseSummaryImageHeader"
-        app:layout_constraintEnd_toEndOf="@+id/purchaseSummaryImageHeader"
-        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryImageHeader"
-        app:layout_constraintTop_toTopOf="@+id/purchaseSummaryImageHeader"
+        app:layout_constraintBottom_toBottomOf="@+id/purchase_summary_image_header"
+        app:layout_constraintEnd_toEndOf="@+id/purchase_summary_image_header"
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_image_header"
+        app:layout_constraintTop_toTopOf="@+id/purchase_summary_image_header"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/purchaseSummarySecondHeaderText"
+        android:id="@+id/purchase_summary_second_header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/purchase_summary_header_second_line"
-        app:layout_constraintEnd_toEndOf="@+id/purchaseSummaryFirstHeaderText"
-        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryFirstHeaderText"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryFirstHeaderText" />
+        app:layout_constraintEnd_toEndOf="@+id/purchase_summary_first_header_text"
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_first_header_text"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_first_header_text" />
 
     <TextView
-        android:id="@+id/purchaseSummaryText"
+        android:id="@+id/purchase_summary_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/purchase_summary_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryImageHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_image_header" />
 
     <ImageView
-        android:id="@+id/purchaseSummaryImage"
+        android:id="@+id/purchase_summary_image"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryText"
-        app:srcCompat="@drawable/sao_paulo_sp" />
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_text"
+        tools:srcCompat="@drawable/sao_paulo_sp" />
 
     <TextView
-        android:id="@+id/purchaseSummaryCityName"
+        android:id="@+id/purchase_summary_location_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryImage"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_image"
         tools:text="São Paulo" />
 
     <TextView
-        android:id="@+id/purchaseSummaryPeriod"
+        android:id="@+id/purchase_summary_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         tools:text="08/12 - 10/12 de 2017"
-        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryCityName"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryCityName" />
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_location_name"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_location_name" />
 
     <TextView
-        android:id="@+id/purchaseSummaryPrice"
+        android:id="@+id/purchase_summary_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="R$ 243,99"
-        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryPeriod"
-        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryPeriod" />
+        app:layout_constraintStart_toStartOf="@+id/purchase_summary_days"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_summary_days" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
