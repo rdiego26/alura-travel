@@ -13,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/paymentTitle"
+        android:text="@string/payment_title"
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="@string/priceValueLabel"
+        android:text="@string/price_value_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentTitleTextView" />
 
@@ -48,7 +48,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:hint="@string/creditCardNumberHint"
+        android:hint="@string/credit_card_number_hint"
         android:inputType="number"
         android:maxLength="12"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         android:id="@+id/creditCardMonthExpires"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:hint="@string/creditCardMonthExpiresHint"
+        android:hint="@string/credit_card_month_expires_hint"
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
@@ -71,7 +71,7 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:hint="@string/creditCardYearExpiresHint"
+        android:hint="@string/credit_card_year_expires_hint"
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
@@ -82,7 +82,7 @@
         android:id="@+id/creditCardCVC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/creditCardCVCHint"
+        android:hint="@string/credit_card_cvc_hint"
         android:inputType="number"
         android:maxLength="3"
         android:textAlignment="center"
@@ -94,11 +94,24 @@
         android:id="@+id/creditCardHolderName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/creditCardHolderNameHint"
-        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZÇ "
+        android:hint="@string/credit_card_holder_name_hint"
+        android:digits="@string/credit_card_holder_name_mask"
         android:inputType="textCapCharacters"
         app:layout_constraintEnd_toEndOf="@+id/creditCardCVC"
         app:layout_constraintStart_toStartOf="@+id/creditCardMonthExpires"
         app:layout_constraintTop_toBottomOf="@+id/creditCardCVC" />
+
+    <Button
+        android:id="@+id/payment_make_payment_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/payment_make_payment_button"
+        android:textColor="@android:color/white"
+        android:background="@drawable/orange_rounded_button"
+        app:layout_constraintEnd_toEndOf="@id/creditCardHolderName"
+        app:layout_constraintStart_toStartOf="@id/creditCardHolderName"
+        app:layout_constraintTop_toBottomOf="@id/creditCardHolderName" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

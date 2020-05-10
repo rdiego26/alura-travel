@@ -10,11 +10,15 @@
 
     <string name="common_day_plural">dias</string>
     <string name="common_day_regular">dia</string>
-    <string name="paymentTitle">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
-    <string name="priceValueLabel">Purchase amount:</string>
-    <string name="creditCardNumberHint">Número do Cartão</string>
-    <string name="creditCardMonthExpiresHint">MM</string>
-    <string name="creditCardYearExpiresHint">AA</string>
-    <string name="creditCardCVCHint">CVC</string>
-    <string name="creditCardHolderNameHint">Nome no cartão</string>
+
+    <string name="payment_app_bar_title">Pagamento</string>
+    <string name="payment_title">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="price_value_label">Purchase amount:</string>
+    <string name="credit_card_number_hint">Número do Cartão</string>
+    <string name="credit_card_month_expires_hint">MM</string>
+    <string name="credit_card_year_expires_hint">AA</string>
+    <string name="credit_card_cvc_hint">CVC</string>
+    <string name="credit_card_holder_name_hint">Nome no cartão</string>
+    <string name="credit_card_holder_name_mask">ABCDEFGHIJKLMNOPQRSTUVWXYZÇ\u0020</string>
+    <string name="payment_make_payment_button">Finalizar compra</string>
 </resources>

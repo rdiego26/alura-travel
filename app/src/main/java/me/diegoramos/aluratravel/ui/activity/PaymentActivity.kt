@@ -10,6 +10,8 @@ class PaymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
+        setTitle(R.string.payment_app_bar_title)
+
 
     }
 

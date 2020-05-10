@@ -11,11 +11,15 @@
 
     <string name="common_day_plural">days</string>
     <string name="common_day_regular">day</string>
-    <string name="paymentTitle">Enter the credit card information you want to use for payment</string>
-    <string name="priceValueLabel">TextView</string>
-    <string name="creditCardNumberHint">Card Number</string>
-    <string name="creditCardMonthExpiresHint">MM</string>
-    <string name="creditCardYearExpiresHint">AA</string>
-    <string name="creditCardCVCHint">CVC</string>
-    <string name="creditCardHolderNameHint">Holder name</string>
+
+    <string name="payment_app_bar_title">Payment</string>
+    <string name="payment_title">Enter the credit card information you want to use for payment</string>
+    <string name="price_value_label">TextView</string>
+    <string name="credit_card_number_hint">Card Number</string>
+    <string name="credit_card_month_expires_hint">MM</string>
+    <string name="credit_card_year_expires_hint">AA</string>
+    <string name="credit_card_cvc_hint">CVC</string>
+    <string name="credit_card_holder_name_hint">Holder name</string>
+    <string name="credit_card_holder_name_mask">ABCDEFGHIJKLMNOPQRSTUVWXYZ\u0020</string>
+    <string name="payment_make_payment_button">Finish payment</string>
 </resources>
