@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/purchaseSummaryImageHeader"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/holo_orange_dark" />
+
+    <TextView
+        android:id="@+id/purchaseSummaryFirstHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/purchase_summary_header_first_line"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/purchaseSummaryImageHeader"
+        app:layout_constraintEnd_toEndOf="@+id/purchaseSummaryImageHeader"
+        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryImageHeader"
+        app:layout_constraintTop_toTopOf="@+id/purchaseSummaryImageHeader"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/purchaseSummarySecondHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/purchase_summary_header_second_line"
+        app:layout_constraintEnd_toEndOf="@+id/purchaseSummaryFirstHeaderText"
+        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryFirstHeaderText"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryFirstHeaderText" />
+
+    <TextView
+        android:id="@+id/purchaseSummaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/purchase_summary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryImageHeader" />
+
+    <ImageView
+        android:id="@+id/purchaseSummaryImage"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryText"
+        app:srcCompat="@drawable/sao_paulo_sp" />
+
+    <TextView
+        android:id="@+id/purchaseSummaryCityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryImage"
+        tools:text="São Paulo" />
+
+    <TextView
+        android:id="@+id/purchaseSummaryPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:text="08/12 - 10/12 de 2017"
+        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryCityName"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryCityName" />
+
+    <TextView
+        android:id="@+id/purchaseSummaryPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="R$ 243,99"
+        app:layout_constraintStart_toStartOf="@+id/purchaseSummaryPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/purchaseSummaryPeriod" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

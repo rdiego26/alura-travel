@@ -18,7 +18,7 @@ class PackageSummaryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.package_summary)
+        setContentView(R.layout.activity_package_summary)
 
         setTitle(R.string.package_summary_app_bar_title)
 
