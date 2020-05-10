@@ -13,4 +13,9 @@
     <string name="common_day_regular">day</string>
     <string name="paymentTitle">Enter the credit card information you want to use for payment</string>
     <string name="priceValueLabel">TextView</string>
+    <string name="creditCardNumberHint">Card Number</string>
+    <string name="creditCardMonthExpiresHint">MM</string>
+    <string name="creditCardYearExpiresHint">AA</string>
+    <string name="creditCardCVCHint">CVC</string>
+    <string name="creditCardHolderNameHint">Holder name</string>
 </resources>

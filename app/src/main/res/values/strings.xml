@@ -12,4 +12,9 @@
     <string name="common_day_regular">dia</string>
     <string name="paymentTitle">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
     <string name="priceValueLabel">Purchase amount:</string>
+    <string name="creditCardNumberHint">Número do Cartão</string>
+    <string name="creditCardMonthExpiresHint">MM</string>
+    <string name="creditCardYearExpiresHint">AA</string>
+    <string name="creditCardCVCHint">CVC</string>
+    <string name="creditCardHolderNameHint">Nome no cartão</string>
 </resources>
