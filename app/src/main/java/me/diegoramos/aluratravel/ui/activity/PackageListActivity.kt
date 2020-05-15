@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_package_list.*
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.dao.PackageDAO
+import me.diegoramos.aluratravel.model.Package
 import me.diegoramos.aluratravel.ui.adapter.PackageListAdapter
 import me.diegoramos.aluratravel.util.Constants
 
@@ -28,17 +29,17 @@ class PackageListActivity : AppCompatActivity() {
     }
 
     private fun configureList() {
-        packageListRecyclerView?.adapter = PackageListAdapter(PackageDAO.getList())
-//        packageList?.setOnItemClickListener { parent, view, position, id ->
-//            toToPackageSummary(position)
-//        }
+        packageListRecyclerView?.adapter = PackageListAdapter(PackageDAO.getList()) {
+            goToPackageSummary(it)
+        }
+
         val linearLayoutManager = LinearLayoutManager(this)
         packageListRecyclerView?.layoutManager = linearLayoutManager
     }
 
-    private fun toToPackageSummary(position: Int) {
+    private fun goToPackageSummary(item: Package) {
         val intent = Intent(applicationContext, PackageSummaryActivity::class.java)
-        intent.putExtra(Constants.selectedPackageExtra(), PackageDAO.getList().get(position))
+        intent.putExtra(Constants.selectedPackageExtra(), item)
         startActivity(intent)
     }
 }
