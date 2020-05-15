@@ -1,6 +1,5 @@
 package me.diegoramos.aluratravel.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,8 +11,8 @@ import me.diegoramos.aluratravel.util.CurrencyUtil
 import me.diegoramos.aluratravel.util.DaysUtil
 import me.diegoramos.aluratravel.util.DrawableUtil
 
-class PackageListAdapter(private val context: Context,
-                         private val data: List<Package>
+class PackageListAdapter(
+    private val data: List<Package>
 ) : RecyclerView.Adapter<PackageViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PackageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,7 +22,7 @@ class PackageListAdapter(private val context: Context,
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: PackageViewHolder, position: Int) =
-        holder.bind(context, data[position])
+        holder.bind(data[position])
 
 }
 
@@ -42,12 +41,12 @@ class PackageViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         locationView = itemView.findViewById(R.id.packageItemLocation)
     }
 
-    fun bind(context: Context, item: Package) {
+    fun bind(item: Package) {
         locationView?.text = item.location
-        daysView?.text = DaysUtil.formatToText(item.days, context)
+        daysView?.text = DaysUtil.formatToText(item.days, itemView.context)
         priceText?.text = CurrencyUtil.formatToBR(item.price)
 
-        val imageDrawable = DrawableUtil.getDrawable(context, item.image)
+        val imageDrawable = DrawableUtil.getDrawable(itemView.context, item.image)
         imageView?.setImageDrawable(imageDrawable)
 
     }

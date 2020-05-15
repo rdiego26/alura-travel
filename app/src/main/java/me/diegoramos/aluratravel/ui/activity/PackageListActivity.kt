@@ -27,7 +27,7 @@ class PackageListActivity : AppCompatActivity() {
     }
 
     private fun configureList() {
-        packageList?.adapter = PackageListAdapter(this, PackageDAO.getList())
+        packageList?.adapter = PackageListAdapter(PackageDAO.getList())
 //        packageList?.setOnItemClickListener { parent, view, position, id ->
 //            toToPackageSummary(position)
 //        }
