@@ -41,8 +41,8 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/specialsHeader" />
-    
-    <ListView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/packageList"
         tools:listitem="@layout/package_item"
         android:layout_width="0dp"

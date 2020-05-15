@@ -2,11 +2,10 @@ package me.diegoramos.aluratravel.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.model.Package
 import me.diegoramos.aluratravel.util.CurrencyUtil
@@ -14,52 +13,44 @@ import me.diegoramos.aluratravel.util.DaysUtil
 import me.diegoramos.aluratravel.util.DrawableUtil
 
 class PackageListAdapter(private val context: Context,
-                         private val data: List<Package>) : BaseAdapter() {
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.package_item, parent, false)
-
-        val item: Package = data[position]
-
-        configureLocation(view, item)
-        configureImage(view, item)
-        configureDays(view, item)
-        configurePrice(view, item)
-
-        return view
+                         private val data: List<Package>
+) : RecyclerView.Adapter<PackageViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PackageViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        return PackageViewHolder(inflater, parent)
     }
 
-    private fun configurePrice(view: View, item: Package) {
-        val priceText: TextView = view.findViewById(R.id.packageItemPrice)
-        priceText.text = CurrencyUtil.formatToBR(item.price)
+    override fun getItemCount(): Int = data.size
+
+    override fun onBindViewHolder(holder: PackageViewHolder, position: Int) =
+        holder.bind(context, data[position])
+
+}
+
+class PackageViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.package_item, parent, false)) {
+
+    private var priceText: TextView? = null
+    private var daysView: TextView? = null
+    private var imageView: ImageView? = null
+    private var locationView: TextView? = null
+
+    init {
+        priceText = itemView.findViewById(R.id.packageItemPrice)
+        daysView = itemView.findViewById(R.id.packageItemDays)
+        imageView = itemView.findViewById(R.id.packageItemImage)
+        locationView = itemView.findViewById(R.id.packageItemLocation)
     }
 
-    private fun configureDays(view: View, item: Package) {
-        val daysText: TextView = view.findViewById(R.id.packageItemDays)
-        daysText.text = DaysUtil.formatToText(item.days, context)
-    }
+    fun bind(context: Context, item: Package) {
+        locationView?.text = item.location
+        daysView?.text = DaysUtil.formatToText(item.days, context)
+        priceText?.text = CurrencyUtil.formatToBR(item.price)
 
-    private fun configureImage(
-        view: View,
-        item: Package
-    ) {
-        val imageView: ImageView = view.findViewById(R.id.packageItemImage)
         val imageDrawable = DrawableUtil.getDrawable(context, item.image)
-        imageView.setImageDrawable(imageDrawable)
-    }
+        imageView?.setImageDrawable(imageDrawable)
 
-    private fun configureLocation(
-        view: View,
-        item: Package
-    ) {
-        val localText: TextView = view.findViewById(R.id.packageItemLocation)
-        localText.text = item.location
     }
 
 
-    override fun getItem(position: Int): Any = data[position]
-
-    override fun getItemId(position: Int): Long = data[position].hashCode().toLong()
-
-    override fun getCount(): Int = data.size
 }

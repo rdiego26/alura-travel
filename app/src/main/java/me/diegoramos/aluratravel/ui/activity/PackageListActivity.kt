@@ -2,8 +2,9 @@ package me.diegoramos.aluratravel.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import me.diegoramos.aluratravel.R
 import me.diegoramos.aluratravel.dao.PackageDAO
 import me.diegoramos.aluratravel.ui.adapter.PackageListAdapter
@@ -11,7 +12,7 @@ import me.diegoramos.aluratravel.util.Constants
 
 class PackageListActivity : AppCompatActivity() {
 
-    private var packageListView: ListView? = null
+    private var packageList: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +23,16 @@ class PackageListActivity : AppCompatActivity() {
     }
 
     private fun initializeComponents() {
-        packageListView = findViewById(R.id.packageList)
+        packageList = findViewById(R.id.packageList)
     }
 
     private fun configureList() {
-        packageListView?.adapter = PackageListAdapter(this, PackageDAO.getList())
-        packageListView?.setOnItemClickListener { parent, view, position, id ->
-            toToPackageSummary(position)
-        }
+        packageList?.adapter = PackageListAdapter(this, PackageDAO.getList())
+//        packageList?.setOnItemClickListener { parent, view, position, id ->
+//            toToPackageSummary(position)
+//        }
+        val linearLayoutManager = LinearLayoutManager(this)
+        packageList?.layoutManager = linearLayoutManager
     }
 
     private fun toToPackageSummary(position: Int) {
